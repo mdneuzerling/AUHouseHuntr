@@ -30,7 +30,7 @@ soi_extract_price_range <- function(soi_text) {
 
 soi_get_text <- function(soi_url) {
   all_pages <- pdftools::pdf_text(soi_url)
-  all_pages[grepl("Sections 47AF", all_pages)][1]
+  all_pages[grepl("Section 47AF", all_pages) | grepl("Sections 47AF", all_pages)][1]
 }
 
 soi_extract_price <- function(soi_url) {
